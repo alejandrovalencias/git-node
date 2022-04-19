@@ -1,0 +1,7 @@
+const api = `https://jsonplaceholder.typicode.com/posts`;
+
+(async function () {
+  const res = await fetch("https://dog.ceo/api/breeds/list/all");
+  const json = await res.json();
+  console.log(json);
+})();

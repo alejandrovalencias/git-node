@@ -1,6 +1,6 @@
-let nombres = ["Juan", "Pedro", "Maria"];
-let materia = new Array("Sociales", "Etica", "Religion");
-let ciudades = "Medellin, Bogota".split(", ");
+// let nombres = ["Juan", "Pedro", "Maria"];
+// let materia = new Array("Sociales", "Etica", "Religion");
+// let ciudades = "Medellin, Bogota".split(", ");
 
 const estudiantes = [
   {
@@ -36,6 +36,26 @@ const estudiantes = [
   },
 ];
 
+// console.log(estudiantes);
+
+let estadoFactura = 1;
+const ESTADOS = [1, 2, 3, 5, 8];
+
+console.log(ESTADOS.findIndex( x => x > 3));
+// let sw = false;
+
+// let existeEstado = ESTADOS.indexOf(estadoFactura);
+// console.log(existeEstado);
+
+// for (const valorEstado of ESTADOS) {
+//   if (valorEstado === estadoFactura) {
+//     sw = true;
+//   }
+// }
+
+// let estudiante = estudiantes.indexOf((c) => c.lote == 5);
+// console.log(estudiante);
+
 // 1. filter
 // 2. map
 
@@ -57,20 +77,15 @@ const estudiantes = [
 // while
 // do while
 
-let n = 0;
-// while (n < 3) {
-//   console.log(n);
-//   n = 200;
-// }
-let i = 0, resultado = 0;
-do {
-  i++;
-  resultado += i;
-} while (i < 5);
+// let n = 0;
+// // while (n < 3) {
+// //   console.log(n);
+// //   n = 200;
+// // }
+// let i = 0, resultado = 0;
+// do {
+//   i++;
+//   resultado += i;
+// } while (i < 5);
 
-console.log(resultado);
-
-
-
-
-
+// console.log(resultado);
