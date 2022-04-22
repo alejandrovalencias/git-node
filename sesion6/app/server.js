@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const db = require("./models");
 
 let corsOptions = ["http://localhost", "http://localhost:8082"];
 // app.use(
@@ -19,32 +20,19 @@ let corsOptions = ["http://localhost", "http://localhost:8082"];
 //   })
 // );
 
-app.use(express.json()); 
+app.use(express.json());
 app.use(express.urlencoded({ extends: true }));
 
-app.get("/", (req, res) => {
-  const {id,token} = req.query;
-  console.log(token);
-  console.log(id);
-  res.json({ mensaje: "Bienvenidos a mi primera api con express get" });
-});
-
-app.post("/", (req, res) => {
-  // const {id,token} = req.query;
-  console.log('----------------------------------------------');
-  const {id,token} = req.body;
-  console.log(req.query);
-  console.log(req.body);
-  // console.log(token);
-  // console.log(id);
-  console.log('----------------------------------------------');
-  res.json({ mensaje: "Bienvenidos a mi primera api con express post" });
-});
-
-
+require("./routes/estudiantes.routes")(app);
+require("./routes/biblioteca.routes")(app);
 const PORT = 8081;
+
+db.sequelize.sync({ force: false }).then(() => {
+  console.log("sequelize ..... db");
+});
 
 const server = app.listen(PORT, function () {
   let host = server.address().address;
   console.log("SERVIDOR BACKEND EN http://%s:%s", host, PORT);
 });
+ 
